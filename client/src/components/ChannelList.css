@@ -1,0 +1,22 @@
+.h1{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(238, 63, 9);
+    margin-top:2%;
+    border-radius:6px;
+    margin-left:2%;
+    margin-right:2%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(248, 246, 250);
+}
+.channel-container{
+    margin-left:30%;
+}
+.channel-container img{
+    margin-top:1%;
+     height:200px;
+     width:60%;
+ }
+.channel-container p{
+  margin-right:47%;
+}

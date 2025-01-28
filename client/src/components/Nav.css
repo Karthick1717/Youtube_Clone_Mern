@@ -1,0 +1,91 @@
+/* Navbar.css */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 0px;
+}
+
+.search input {
+  width: 300px;
+  border-radius: 6px;
+  border-width: 0px;
+  padding: 5px;
+  margin-top: 5%;
+}
+
+.navbar a, .logout {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 1s;
+}
+
+.navbar a:hover, .navbar .logout:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .search input {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar .links {
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar .logo {
+    font-size: 1.2em;
+  }
+
+  .search input {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .navbar .links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .navbar a, .logout {
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+  }
+}

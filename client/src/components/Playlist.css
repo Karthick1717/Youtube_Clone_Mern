@@ -1,0 +1,31 @@
+.playlist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.playlist .delete{
+   padding:20px;
+   width:50%;
+   height:30px;
+   margin-bottom:2%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: green;
+}
+.playlist .delete:hover{
+    background-color: red;
+}
+@media (max-width: 768px) {
+    .playlist .delete {
+        width: 75%; /* Increase width for better fit on smaller screens */
+        padding: 15px; /* Adjust padding for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .playlist .delete {
+        width: 90%; /* Make it almost full width on very small screens */
+        padding: 10px; /* Reduce padding for better mobile experience */
+    }
+}

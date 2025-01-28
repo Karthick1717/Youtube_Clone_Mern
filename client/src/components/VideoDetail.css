@@ -1,0 +1,150 @@
+/* Container for the entire page */
+.video-detail-page {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    align-items: flex-start;
+  }
+  
+  /* Main video detail container */
+  .video-detail-container {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  /* Style for the video player */
+  .video-player {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Channel info container */
+  .channel-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Channel icon image */
+  .channel-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  /* Channel name style */
+  .channel {
+      position: absolute;
+      top:102%;
+      left:3.5%;
+
+  }
+  
+  /* Subscribe button style */
+  .subscribe-button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width:50%;
+  }
+  .Add-button{
+    width:50%;
+    margin-left:1%;
+    margin-right:1%;
+    background-color:skyblue;
+    color: #033;
+  }
+  
+  .subscribe-button:hover {
+    background-color: #cc0000;
+  }
+  
+  /* Vertical line to separate content */
+  .vertical-line {
+    width: 2px;
+    background-color: #ccc;
+    height: 100%;
+    margin: 0 20px;
+  }
+  
+  /* Related videos section */
+  .related-videos {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .related-video-player{
+    width:300px;
+    height:300px;
+  }
+  @media (max-width: 1024px) {
+    /* Stack the main container and related videos vertically on medium screens */
+    .video-detail-page {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    /* Adjust related video player size */
+    .related-video-player {
+        width: 250px;
+        height: 250px;
+    }
+  
+    .vertical-line {
+        display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Adjust the video player size on smaller screens */
+    .video-player {
+        max-height: 350px;
+    }
+  
+    /* Full-width buttons on mobile */
+    .subscribe-button, .Add-button {
+        width: 100%;
+        margin: 10px 0;
+    }
+  
+    /* Adjust related video player size */
+    .related-video-player {
+        width: 220px;
+        height: 220px;
+    }
+  
+    .channel {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-top: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Adjust the video player and related video sizes for small screens */
+    .video-player {
+        max-height: 250px;
+    }
+  
+    .related-video-player {
+        width: 100%;
+        height: auto;
+    }
+  
+    .related-videos {
+        padding: 10px;
+    }
+  
+    .subscribe-button, .Add-button {
+        width: 100%;
+    }
+  }

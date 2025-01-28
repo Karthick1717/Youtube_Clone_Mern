@@ -1,0 +1,23 @@
+img{
+  width:400px;
+  height:200px;
+  border:2px solid black;
+  border-radius:8px;
+}
+.video-list{
+  display: grid;
+  grid-template-columns:auto auto auto;
+  margin-left:2%;
+}
+@media (max-width: 768px) {
+  .video-list {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-list {
+    grid-template-columns: auto;
+    margin-left: 0;
+  }
+}
