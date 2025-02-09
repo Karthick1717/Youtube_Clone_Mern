@@ -14,7 +14,9 @@ const schema=new mongoose.Schema({
         type:String,
         default:"Not yet Created"
     },
-    Playlist:[{type:Number}]
+    subscribers:[],
+    videos:[],
+    Playlist:[{type:String}]
 })
 schema.pre("save",async function (next){
          if(!this.isModified("password")){

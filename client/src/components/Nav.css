@@ -1,91 +1,140 @@
-/* Navbar.css */
+/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  padding: 10px 20px;
-  border-radius: 0px;
-}
-
-.search input {
-  width: 300px;
-  border-radius: 6px;
-  border-width: 0px;
-  padding: 5px;
-  margin-top: 5%;
-}
-
-.navbar a, .logout {
+  background: #0213aa;
+  padding: 15px 20px;
   color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  transition: background-color 1s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 60px;
 }
 
-.navbar a:hover, .navbar .logout:hover {
-  background-color: #575757;
-  border-radius: 4px;
+/* Logo */
+.logo a{
+   font-size: 25px;
+  color: rgb(243, 231, 231);
+   text-decoration: none;
+   font-family: sans-serif;
 }
 
-.navbar .logo {
-  font-size: 1.5em;
-  font-weight: bold;
+/* Search Bar */
+#search {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 200px;
+  transition: width 0.3s ease-in-out;
 }
 
-.navbar .links {
+/* Hamburger Menu */
+.hamburger {
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Navigation Links */
+.links {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 15px;
 }
 
-/* Responsive adjustments */
+.links a, .logout {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 8px 12px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.links a:hover, .logout:hover {
+  background: #fcf9f9;
+  color:black
+}
+
+
+/* Logout Button */
+.logout {
+  background: hsl(4, 97%, 47%);
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .navbar {
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+  .logout {
+    background: hsl(4, 97%, 47%);
+    width: 40%;
+  }
+
+  /* Search Centered */
+  #search {
+    width: 160px;
+    max-width: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Hide links initially */
+  .links {
+    display: none;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
+    width: 80%;
+    text-align: center;
+    background: #0213aa;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    margin-top: 2px;
+    margin-left: 80px;
+
   }
 
-  .search input {
-    width: 100%;
-    margin-top: 10px;
+  /* Show links when active */
+  .links.active {
+    display: flex;
   }
 
-  .navbar .links {
-    width: 100%;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  /* Hamburger menu visible */
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar {
-    padding: 10px;
-  }
-
-  .navbar .logo {
-    font-size: 1.2em;
-  }
-
-  .search input {
-    width: 100%;
-    padding: 8px;
-  }
-
-  .navbar .links {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
-  .navbar a, .logout {
-    padding: 10px;
-    text-align: left;
-    width: 100%;
+  #search {
+    width: 140px;
   }
 }

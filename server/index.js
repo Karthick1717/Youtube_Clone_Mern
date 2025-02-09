@@ -5,12 +5,18 @@ const {userrouter}=require("./routes/user")
 const {channelrouter}=require("./routes/channel")
 const app=express()
 
-app.use(cors())
+app.use(cors({
+    origin: "*", 
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
+
+
 app.use(express.json())
 
 const connect=async ()=>{
     try{
-    await mongoose.connect("mongodb+srv://karthickk2022:Karthick2004@reciepe.vc4jidx.mongodb.net/Project?retryWrites=true&w=majority&appName=reciepe")
+    await mongoose.connect("mongodb+srv://karthick:Karthick@cluster0.bn3vm7i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     console.log("Database connected")
     }
     catch(err){
@@ -18,6 +24,9 @@ const connect=async ()=>{
     }
 }
 connect()
+app.get("/check",(req,res)=>{
+    res.send("Update")
+})
 app.use("/",userrouter)
 app.use("/channel",channelrouter)
 const port=7000 || process.env.PORT

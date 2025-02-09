@@ -24,7 +24,7 @@ const Login = () => {
       password:password
     }
     try{
-    const response=await axios.post("http://localhost:7000/login",payload)
+    const response=await axios.post("https://youtube-steel-chi.vercel.app/login",payload)
     localStorage.setItem("token",response.data.token)
      dispatch(setToken(response.data.token))
      navigate("/")
@@ -41,7 +41,7 @@ const Login = () => {
       password:password
     }
     try{
-    const response=await axios.post("http://localhost:7000/register",payload)
+    const response=await axios.post("https://youtube-steel-chi.vercel.app/register",payload)
     switchToLogin()
     console.log(response)
     }

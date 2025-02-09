@@ -11,7 +11,7 @@ function ChannelList() {
     const navigate=useNavigate()
     async function fetch(){
         if(token){
-            const response=await axios.post("http://localhost:7000/channel/getChannel",{channel},{
+            const response=await axios.post("https://youtube-steel-chi.vercel.app/channel/getChannel",{channel},{
                 headers:{
                     Authorization:`Bearer ${token}`
                 }

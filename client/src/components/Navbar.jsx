@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Nav.css'; // Import the CSS file
+import './Nav.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeToken, setSearch } from '../redux/slice';
 
 function Navbar() {
   const token = useSelector((state) => state.user.token);
-  const search = useSelector((state) => state.user.search) || ""; // Ensure search state defaults to an empty string if not present
+  const search = useSelector((state) => state.user.search) || "";
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState(search);
+  const [menuOpen, setMenuOpen] = useState(false); // State for hamburger menu
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchValue(value);
-    dispatch(setSearch(value)); // Update the search state in Redux store
+    dispatch(setSearch(value));
   };
 
   const handleLogout = () => {
@@ -28,15 +29,20 @@ function Navbar() {
       <div className="logo">
         <Link to="/">Logo</Link>
       </div>
-      <div className="search">
-        <input
-          type="search"
-          placeholder="Search"
-          value={searchValue}
-          onChange={handleSearchChange}
-        />
+
+      <input
+        type="search"
+        placeholder="Search"
+        value={searchValue}
+        onChange={handleSearchChange}
+        id="search"
+      />
+
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
       </div>
-      <div className="links">
+
+      <div className={`links ${menuOpen ? "active" : ""}`}>
         <Link to="/">Home</Link>
         {token && <Link to="/playlist">Playlist</Link>}
         <Link to="/about">About</Link>

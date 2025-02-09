@@ -15,7 +15,7 @@ function Home() {
 
   async function getVideo() {
     try {
-      const response = await axios.get("http://localhost:7000/channel/get", {
+      const response = await axios.get("https://youtube-steel-chi.vercel.app/channel/get", {
         headers: {
           Authorization: `Bearer ${token}`
         }

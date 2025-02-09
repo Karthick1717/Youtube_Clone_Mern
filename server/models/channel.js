@@ -1,6 +1,9 @@
 const mongoose=require("mongoose")
 
 const Schema=new mongoose.Schema({
+    id:{
+        type:String,
+    },
     channel:{
        type:String
     },
@@ -17,10 +20,6 @@ const Schema=new mongoose.Schema({
         type:String
     },
     Likes:{
-        type:Number,
-        default:0
-    },
-    Subscribers:{
         type:Number,
         default:0
     },

@@ -17,14 +17,14 @@ const VideoDetail = () => {
   const [count,setcount]=useState(0)
   useEffect(() => {
     const getVideo = async () => {
-      const response = await axios.get('http://localhost:7000/channel/get');
+      const response = await axios.get('https://youtube-steel-chi.vercel.app/channel/get');
       setVideo(response.data.response);
     };
     getVideo();
   }, []);
   useEffect(() => {
     const getSubs = async () => {
-      const response = await axios.get('http://localhost:7000/get',{
+      const response = await axios.get('https://youtube-steel-chi.vercel.app/get',{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -42,14 +42,16 @@ const VideoDetail = () => {
     }
   }, [video, videoId]);
 
-  const selectedVideo = video.find((video) => video.id === parseInt(videoId));
+  console.log(video)
+
+  const selectedVideo = video.find((video) => video.id === videoId);
   console.log(selectedVideo)
   const handleClick=(id)=>{
          navigate(`/video/${id}`)
   }
   async function handleClicked(id){
     if(token){
-    const response=await axios.post("http://localhost:7000/playlist",{id},{
+    const response=await axios.post("https://youtube-steel-chi.vercel.app/playlist",{id},{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -60,7 +62,7 @@ const VideoDetail = () => {
 
   const handleSubscribe=async(channel)=>{
     if(token){
-    const response=await axios.post("http://localhost:7000/channel/subscribe",{channel},{
+    const response=await axios.post("https://youtube-steel-chi.vercel.app/channel/subscribe",{channel},{
       headers:{
         Authorization:`Baerer ${token}`
       }
@@ -78,7 +80,7 @@ const handleLike = async (id) => {
   try {
 
       const response = await axios.post(
-          "http://localhost:7000/channel/likes",
+          "https://youtube-steel-chi.vercel.app/channel/likes",
           { vid:id },
           {
               headers: {
@@ -92,6 +94,7 @@ const handleLike = async (id) => {
       console.error("An error occurred while handling like:", error);
   }
 };
+console.log(selectedVideo)
 
 
   return (

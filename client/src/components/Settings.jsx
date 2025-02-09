@@ -31,7 +31,7 @@ const Content = ({ activeSection }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get('http://localhost:7000/get', {
+      const response = await axios.get('https://youtube-steel-chi.vercel.app/get', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -87,7 +87,7 @@ const Content = ({ activeSection }) => {
                                 if (token) {
                                     if (pass1 === pass2) {
                                         try {
-                                            const response = await axios.post('http://localhost:7000/password', { password:pass1 }, {
+                                            const response = await axios.post('https://youtube-steel-chi.vercel.app/password', { password:pass1 }, {
                                                 headers: {
                                                     Authorization: `Bearer ${token}`,
                                                 },
